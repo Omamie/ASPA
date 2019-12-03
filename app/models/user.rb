@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
 
-  has_many :treatments
-  has_many :bookings
+  has_many :treatments, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 end
