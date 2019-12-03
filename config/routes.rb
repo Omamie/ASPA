@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users do
-    resources :treatments, only: [:new, :create, :destroy, :edit, :update]
-  end
-
-  resources :treatments, only: [:index, :show]
+  resources :treatments, only: [:new, :create, :destroy, :edit, :update]
 
   devise_for :users
   root to: 'pages#home'
