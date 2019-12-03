@@ -8,11 +8,9 @@ class TreatmentsController < ApplicationController
   end
 
   def new
-    @treatment = Treatm
   end
 
   def create
-
   end
 
   def edit
