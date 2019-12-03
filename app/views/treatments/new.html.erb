@@ -1,2 +1,10 @@
-<h1>Treatments#new</h1>
-<p>Find me in app/views/treatments/new.html.erb</p>
+<h1> Create a new Treatment </h1>
+<div>
+<%= simple_form_for @treatment do |f| %>
+  <%= f.input :name %>
+   <%= f.input :description %>
+   <%= f.input :price %>
+   <%= f.input :center_name %>
+  <%= f.submit "add a treatment", class: "btn btn-primary" %>
+</div>
+<% end %>
