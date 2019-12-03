@@ -1,0 +1,9 @@
+<h1>Treatments#index</h1>
+<p>Find me in app/views/treatments/index.html.erb</p>
+
+<% @treatments.each do |t| %>
+<%= t.name %>
+<%= t.price %>
+<%= t.center_name %>
+<%= t.photo %>
+<% end %>
