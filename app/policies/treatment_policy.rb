@@ -5,20 +5,20 @@ class Scope < Scope
     end
 end
 
-    # def show?
-    #   true
-    # end
+    def show?
+      true
+    end
 
     def create?
-      return true
+     true
     end
 
     def update?
-      record.user == user
+      user == record.user
     end
 
     def destroy?
-      record.user == user
+      user == record.user
     end
 
 end
