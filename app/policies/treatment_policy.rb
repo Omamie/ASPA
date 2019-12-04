@@ -5,9 +5,9 @@ class Scope < Scope
     end
 end
 
-    # def show?
-    #   true
-    # end
+    def show?
+      true
+    end
 
     def create?
       return true
