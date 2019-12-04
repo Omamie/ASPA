@@ -1,24 +1,30 @@
 class TreatmentsController < ApplicationController
   def index
-    @treatments = Treatment.all
+    @treatments = policy_scope(Treatment)
   end
 
   def new
-    @user = User.find(current_user.id)
-    @treatment = Treatment.new
+    @treatment = current_user.treatments.new
+    authorize @treatment
+    # @user = User.find(current_user.id)
+    # @treatment = Treatment.new
   end
 
   def create
-    @treatment = Treatment.new(safe_params)
-    @treatment.user = current_user
-    @treatment.save
-    redirect_to treatments_path
-  end
+    # @treatment = Treatment.new(safe_params)
+    # @treatment.user = current_user
+    @treatment = current_user.treatments.new(safe_params)
+    authorize @treatment
+    if @treatment.save
+      redirect_to treatments_path
+    end
+ end
 
   def edit
   end
 
   def update
+    authorize @treatment
   end
 
   def destroy
