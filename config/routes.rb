@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'bookings/new'
-  resources :treatments
+  resources :treatments do
+    resources :bookings, only: [:create]
+  end
 
   devise_for :users
   root to: 'pages#home'

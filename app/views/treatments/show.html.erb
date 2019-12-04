@@ -2,4 +2,17 @@
 <p>Find me in app/views/treatments/show.html.erb</p>
 <%= @treatment.name %>
 <%= @treatment.description %>
-<%= link_to 'Book your treatment',  %>
+<div class="container py-3 ">
+<div class="modal-card-smaller p-3">
+<div>
+<h1 class="mx-3 my-3"> Book a Treatment </h1>
+<div>
+<%= simple_form_for([@treatment, @booking]) do |f| %>
+
+
+<%= f.submit "book a treatment", class: "btn btn-primary" %>
+</div>
+<% end %>
+
+</div>
+</div>
