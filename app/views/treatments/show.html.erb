@@ -8,12 +8,10 @@
 <div>
 <h1 class="mx-3 my-3"> Book a Treatment </h1>
 <div>
-<%= simple_form_for([@treatment, @booking]) do |f| %>
 
+  <%= link_to "book now", new_treatment_booking_path(@treatment) %>
 
-<%= f.submit "book a treatment", class: "btn btn-primary" %>
 </div>
-<% end %>
 
 </div>
 </div>

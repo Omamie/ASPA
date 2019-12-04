@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'bookings/new'
   resources :treatments do
-    resources :bookings, only: [:create]
+    resources :bookings, only: [:create, :new]
   end
 
   devise_for :users
