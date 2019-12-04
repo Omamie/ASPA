@@ -30,6 +30,12 @@ class TreatmentsController < ApplicationController
     end
  end
 
+ def show
+  @treatment= Treatment.find(params[:id])
+  authorize @treatment
+   @booking = current_user.bookings.new
+ end
+
   def edit
     @treatment = current_user.treatments.new
     authorize @treatment
