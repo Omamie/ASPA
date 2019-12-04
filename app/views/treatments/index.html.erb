@@ -5,6 +5,12 @@
   <%= t.price %>
   <%= t.center_name %>
   <%= t.photo %>
+  <% if policy(t).update? %>
+  <%= link_to 'Edit', edit_treatment_path(t) %>
+  <% end %>
+   <% if policy(t).destroy? %>
+  <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
+  <% end %>
 </div>
 <% end %>
 <div>
@@ -12,5 +18,7 @@
   <% if policy(Treatment).create? %>
   <%= link_to 'New Treatment', new_treatment_path %>
   <% end %>
+
+
 </div>
 

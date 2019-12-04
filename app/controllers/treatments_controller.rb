@@ -3,16 +3,17 @@ class TreatmentsController < ApplicationController
     @treatments = policy_scope(Treatment)
   end
 
+  def show
+    @treatment = Treatment.find(params[:id])
+    authorize @treatment
+  end
+
   def new
     @treatment = current_user.treatments.new
     authorize @treatment
-    # @user = User.find(current_user.id)
-    # @treatment = Treatment.new
   end
 
   def create
-    # @treatment = Treatment.new(safe_params)
-    # @treatment.user = current_user
     @treatment = current_user.treatments.new(safe_params)
     authorize @treatment
     if @treatment.save
@@ -27,14 +28,24 @@ class TreatmentsController < ApplicationController
  end
 
   def edit
-  end
-
-  def update
+    @treatment = current_user.treatments.new
     authorize @treatment
   end
 
-  def destroy
+  def update
+    @treatment = Treatment.find(params[:id])
+      @treatment.update(safe_params)
+      redirect_to treatment_path(@treatment.id)
   end
+
+  def destroy
+    @treatment = Treatment.find(params[:id])
+    authorize @treatment
+    @treatment.destroy
+    redirect_to treatments_path
+  end
+
+  private
 
   def safe_params
     params.require(:treatment).permit(:name, :description, :price, :center_name)
