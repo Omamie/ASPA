@@ -61,6 +61,6 @@ class TreatmentsController < ApplicationController
   private
 
   def safe_params
-    params.require(:treatment).permit(:name, :description, :price, :center_name)
+    params.require(:treatment).permit(:name, :description, :price, :center_name, :address)
   end
 end
