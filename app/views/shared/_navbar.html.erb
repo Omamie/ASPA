@@ -7,10 +7,6 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-
-       <li class="nav-item">
-        <%= link_to "Bookings", new_treatment_booking_path(:treatment_id), class: "nav-link" %>
-      </li>
       <li class="nav-item">
         <%= link_to "Treatments", treatments_path, class: "nav-link" %>
       </li>

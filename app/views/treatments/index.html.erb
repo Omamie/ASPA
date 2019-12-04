@@ -6,16 +6,18 @@
   <div class="card-treatment">
     <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
     <div id="card-text">
-      <h3> <%= t.center_name %> </h3>
+      <h3> <%= link_to t.center_name, treatment_path(t.id) %></h3>
       <p>  <%= t.name %> </p>
       <p>  <%= t.address %> </p>
-      <p class="price">  <%= t.price %> </p>
-        <% if policy(t).update? %>
+       <% if policy(t).update? %>
   <%= link_to 'Edit', edit_treatment_path(t) %>
   <% end %>
-       <% if policy(t).destroy? %>
+   <% if policy(t).destroy? %>
   <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
   <% end %>
+      <%= link_to 'See More', treatment_path(t.id), class: "btn btn-ghost" %>
+      <p class="price">  <%= t.price %> </p>
+
     </div>
   </div>
   <% end %>

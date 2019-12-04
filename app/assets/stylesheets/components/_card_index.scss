@@ -16,6 +16,16 @@
   width:18rem;
 }
 
+#card-text a {
+  text-decoration: none;
+  color: black;
+}
+
+#card-text a:hover {
+  color: blue;
+}
+
+
 .card-container {
   flex-grow: 1;
   margin-right: 15px;
