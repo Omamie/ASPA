@@ -1,2 +1,21 @@
-<h1>Treatments#edit</h1>
-<p>Find me in app/views/treatments/edit.html.erb</p>
+<div class="container py-3 ">
+<div class="modal-card-smaller p-3">
+<div>
+<h1 class="mx-3 my-3"> Edit Treatment </h1>
+<div>
+<%= simple_form_for @treatment do |f| %>
+  <%= f.input :name %>
+   <%= f.input :description %>
+   <%= f.input :price %>
+   <%= f.input :center_name %>
+  <%= f.submit "Update", class: "btn btn-ghost" %>
+</div>
+<% end %>
+
+<%= link_to "Back to treaments", treatments_path, class: "fas fa-chevron-left"%> <br/>
+
+</div>
+</div>
+
+
+
