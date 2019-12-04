@@ -24,6 +24,10 @@ class TreatmentsController < ApplicationController
   def destroy
   end
 
+  def my_treatments
+    @treatments = current_user.treatments
+  end
+
   def safe_params
     params.require(:treatment).permit(:name, :description, :price, :center_name)
   end

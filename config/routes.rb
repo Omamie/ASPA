@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :treatments
+  get "/my_treatments", to: "treatments#my_treatments"
 
   devise_for :users
   root to: 'pages#home'
