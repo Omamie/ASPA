@@ -1,0 +1,41 @@
+.card-treatment {
+  display: flex;
+  background: white;
+  height:200px;
+  margin-bottom: 15px;
+}
+
+.card-treatment img {
+  width:300px;
+  background-size: cover;
+}
+
+#card-text {
+  padding-left: 15px;
+  padding-right: 15px;
+  width:18rem;
+}
+
+.card-container {
+  flex-grow: 1;
+  margin-right: 15px;
+}
+
+.price {
+  margin-top: 99px;
+  margin-left: 300px;
+}
+
+#map {
+  position: sticky;
+  top: 0;
+}
+
+.container-all {
+  display:flex;
+  background-color: #C4CFB7;
+}
+
+body {
+  background-color: #C4CFB7;
+}
