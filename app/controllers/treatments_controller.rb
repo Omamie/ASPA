@@ -1,6 +1,15 @@
 class TreatmentsController < ApplicationController
   def index
     @treatments = policy_scope(Treatment)
+    @treatments = Treatment.geocoded
+
+    @markers = @treatments.map do |treatment|
+      {
+        lat: treatment.latitude,
+        lng: treatment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { treatment: treatment })
+      }
+    end
   end
 
   def new
