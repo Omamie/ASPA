@@ -1,24 +1,28 @@
-<h1>All Treatments</h1>
-<div>
+<h1 class="text-center bg-white">All Treatments</h1>
+<div class="container-all">
+  <div class="card-container">
   <% @treatments.each do |t| %>
-  <%= t.name %>
-  <%= t.price %>
-  <%= t.center_name %>
-  <%= t.photo %>
-  <% if policy(t).update? %>
+    
+  <div class="card-treatment">
+    <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
+    <div id="card-text">
+      <h3> <%= t.center_name %> </h3>
+      <p>  <%= t.name %> </p>
+      <p class="price">  <%= t.price %> </p>
+        <% if policy(t).update? %>
   <%= link_to 'Edit', edit_treatment_path(t) %>
   <% end %>
-   <% if policy(t).destroy? %>
+       <% if policy(t).destroy? %>
   <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
   <% end %>
-</div>
-<% end %>
-<div>
-
-  <% if policy(Treatment).create? %>
-  <%= link_to 'New Treatment', new_treatment_path %>
+    </div>
+  </div>
   <% end %>
-
-
-</div>
-
+  </div>
+  <div
+    id="map"
+    style="width: 50vw;
+    margin-right: 5px;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
