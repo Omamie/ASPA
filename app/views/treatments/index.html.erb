@@ -2,12 +2,13 @@
 <div class="container-all">
   <div class="card-container">
   <% @treatments.each do |t| %>
-    
+
   <div class="card-treatment">
     <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
     <div id="card-text">
       <h3> <%= t.center_name %> </h3>
       <p>  <%= t.name %> </p>
+      <p>  <%= t.address %> </p>
       <p class="price">  <%= t.price %> </p>
         <% if policy(t).update? %>
   <%= link_to 'Edit', edit_treatment_path(t) %>
@@ -25,4 +26,6 @@
     margin-right: 5px;
     height: 600px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+      </div>
