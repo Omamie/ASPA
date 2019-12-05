@@ -11,6 +11,8 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 
+gem 'carrierwave', '~> 1.2'
+
 gem 'geocoder'
 
 gem 'pg_search', '~> 2.3.0'

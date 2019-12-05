@@ -12,11 +12,6 @@ class TreatmentsController < ApplicationController
     end
   end
 
-  def show
-    @treatment = Treatment.find(params[:id])
-    authorize @treatment
-  end
-
   def new
     @treatment = current_user.treatments.new
     authorize @treatment
@@ -28,13 +23,13 @@ class TreatmentsController < ApplicationController
     if @treatment.save
       redirect_to treatments_path
     end
- end
+  end
 
- def show
-  @treatment= Treatment.find(params[:id])
-  authorize @treatment
-   @booking = current_user.bookings.new
- end
+  def show
+    @treatment = Treatment.find(params[:id])
+    authorize @treatment
+    @booking = current_user.bookings.new
+  end
 
  def search
     if params[:query].present?
@@ -52,8 +47,8 @@ class TreatmentsController < ApplicationController
 
   def update
     @treatment = Treatment.find(params[:id])
-      @treatment.update(safe_params)
-      redirect_to treatment_path(@treatment.id)
+    @treatment.update(safe_params)
+    redirect_to treatment_path(@treatment.id)
   end
 
   def destroy
@@ -70,6 +65,6 @@ class TreatmentsController < ApplicationController
   private
 
   def safe_params
-    params.require(:treatment).permit(:name, :description, :price, :center_name, :address)
+    params.require(:treatment).permit(:name, :description, :price, :center_name, :address, :photo)
   end
 end
