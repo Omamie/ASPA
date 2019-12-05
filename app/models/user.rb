@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
 
+  mount_uploader :photo, PhotoUploader
+
   has_many :treatments, dependent: :destroy
   has_many :bookings, dependent: :destroy
 end

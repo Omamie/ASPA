@@ -21,6 +21,8 @@
       <%= f.input :password_confirmation,
       required: true,
       input_html: { autocomplete: "new-password" } %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
       <div class="form-actions">
         <%= f.button :submit, "Sign up", class: "btn btn-ghost mt-3"%>
       </div>
