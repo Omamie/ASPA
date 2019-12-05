@@ -37,6 +37,7 @@ class TreatmentsController < ApplicationController
     @treatment = Treatment.find(params[:id])
     authorize @treatment
     @booking = current_user.bookings.new
+    @my_booking = Booking.where(user: current_user, treatment: @treatment)
   end
 
   def edit

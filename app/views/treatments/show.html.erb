@@ -17,7 +17,10 @@
 
 <div>
   <p>Your bookings:</p>
-  <%= current_user %>
-  <%= @booking %>
-  <%= @treatment.moo%>
+  <% @my_booking.each do |booking| %>
+    <%= booking.date %>
+    <%= @treatment.name %>
+  <% end %>
+
+
 </div>

@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   def create
     @booking = current_user.bookings.new(booking_params)
     @treatment = Treatment.find(params[:treatment_id])
+    @booking.treatment = @treatment
     authorize @treatment
     authorize @booking
     if @booking.save
@@ -21,6 +22,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.permit(:user_id, :treatment_id)
+    params.require(:booking).permit(:treatment_id, :date)
   end
 end
