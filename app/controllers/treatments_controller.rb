@@ -1,7 +1,13 @@
 class TreatmentsController < ApplicationController
   def index
     @treatments = policy_scope(Treatment)
-    @treatments = Treatment.geocoded
+
+    if params[:treatment].present? && [:address].present?
+       sql_query = "name ILIKE :treatment and address ILIKE :address"
+       @treatments = Treatment.where(sql_query, treatment: "%#{params[:treatment]}%" , address:"%#{params[:address]}%")
+    else
+      @treatments = Treatment.geocoded
+    end
 
     @markers = @treatments.map do |treatment|
       {

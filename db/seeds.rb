@@ -27,6 +27,7 @@ User.create!(user_attributes)
 Treatment.destroy_all
 
 puts 'Creating treatments...'
+
 treatment_attributes = [{"name":"Circulatory massage","description":"Targeted massage to help blood circulation","price":781,"center_name":"at turpis", user_id: User.ids.sample, "address": "corso lodi, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ILVrDyEQAMKgjisZLNcEQ917GA8guECh3FHyBOqvruo9vTyrsw&s"},
 {"name":"Relaxing massage","description":"Massage made with moves that relax muscles and mind.","price":965,"center_name":"convallis duis", user_id: User.ids.sample, "address": "corso lodi, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp49JSah0XHavPD-vdYjuk95uVNxRYQzr4YKxFP1heRGzNQKIE&s"},
 {"name":"Lymphatic drainage massage","description":"Massage that helps lymph flow towards the discharge points, frees the body from excess fluids.","price":856,"center_name":"hac", user_id: User.ids.sample, "address": "mare street, london", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRyhJ2uNHzOfiLvZK2K5v_a3kbJxgx8I_t-loQXLkQJJyx1Ml&s"},
@@ -37,6 +38,8 @@ treatment_attributes = [{"name":"Circulatory massage","description":"Targeted ma
 {"name":"Facial massage","description":"The treatment consists of a gentle massage of the face with the use of a vial or specific cream.","price":263,"center_name":"faucibus orci", user_id: User.ids.sample, "address": "corso lodi, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yYoo6xOR279SElLRARh-JJ2xkYqW04wHcNn4kbe5mk9AeHHWPw&s"},
 {"name":"Couples massage","description":"Massage performed simultaneously with relaxing effect.","price":453,"center_name":"iaculis congue", user_id: User.ids.sample, "address": "viale molise, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOwQTiQgng4GIz42pbnWhyxMg4igqThssaU-_Cw1sV2UMf0RE&s"},
 {"name":"Love Massage","description":"Candle. Couples massage using aromatic candles with ppepper and cocoa, which when lit, create an oil that caress the body. They represent a real wellness ritual that involves all the senses.","price":188,"center_name":"ipsum",user_id: User.ids.sample, "address": "corso lodi, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJkadbzypiCB3z4ehujW9BHwZkAUoD3G5S5wxdUvTmkpyf7nCpZQ&s"}]
+
+
 
 Treatment.create!(treatment_attributes)
 
