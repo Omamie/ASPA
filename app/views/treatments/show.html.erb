@@ -49,9 +49,13 @@
 
 <%= link_to "Add A Review", class: "btn btn-ghost"%>
 
+
+  <%= simple_form_for [@treatment, @review] do |f| %>
+      <%= f.input :stars, collection: 1..10 %>
+      <%= f.input :content%>
+      <%= f.submit "add a review", class: "btn btn-primary" %>
+      <% end %>
 </div>
-
-
 
 <div class="container border-bottom card-gap py-3" id="address">
 
@@ -60,10 +64,14 @@
 <div class= "about-text card-gap">
 
 <p><%= @treatment.address.capitalize%></p>
-</div>
+
+<% @treatment.reviews.each do |r|  %>
+  <%= r.content %>
+<%end%>
 
 </div>
 
+</div>
 
 
 <div class="container card-gap">

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
+  get 'reviews/new'
   resources :treatments do
-    resources :bookings, only: [:create, :new]
+    resources :reviews, only: [:create, :new, :index]
+    resources :bookings, only: [:create, :new, :show]
   end
   get "/my_treatments", to: "treatments#my_treatments"
 
