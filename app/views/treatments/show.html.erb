@@ -1,10 +1,30 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/900×700/?spa);">
   <div class="container">
-  <h3><%= @treatment.name %></h3>
-  <p><%= @treatment.description%></p>
+    <div class="center-page">
+  <h2><%= @treatment.center_name.capitalize %></h2>
+  <p><%= @treatment.address.capitalize %></p>
+  </div>
   </div>
 </div>
 
+<div class="container under-banner">
+
+  <div class="under-banner-titles">
+<div class="d-inline p-2 font-weight-bold" id="treatments">TREATMENTS</div>
+<div class="d-inline p-2 " id="staff">STAFF</div>
+<div class="d-inline p-2 " id="reviews">REVIEWS</div>
+<div class="d-inline p-2 " id="address">ADDRESS</div>
+</div>
+
+
+</div>
+
+
+<div class="container center-body">
+
+<h3><strong>You have selected:</strong> <%= @treatment.name %></h3>
+<p>Description: <%= @treatment.description%></p>
+</div>
 
 <%= link_to "book now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
 

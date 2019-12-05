@@ -75,13 +75,15 @@ margin: 0;
 }
 
 
-.centre-card-details p {
+.centre-card-details p, h3 {
+  font-size: 16px;
   margin-left: 8px;
-  font-weight: bold;
+  font-weight: lighter;
 }
 
 .centre-card-price {
-float: right;
+margin-left: 8px;
+font-weight: lighter;
 }
 
 

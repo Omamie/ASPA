@@ -2,6 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  background-color: white;
 }
 
 .banner h1 {
@@ -12,9 +13,25 @@
   font-weight: bold;
 }
 
-.banner p, h3 {
+.banner p {
   font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.center-page h1, h2{
+  color: white;
+  font-weight: bold;
+
+}
+
+.under-banner {
+padding: 24px;
+
+}
+
+.center-body {
+padding: 80px  0;
 }
