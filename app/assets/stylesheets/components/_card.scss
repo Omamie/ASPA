@@ -1,22 +1,10 @@
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
 .treatments-card-container{
   display: flex;
   flex-direction:row;
   justify-content: space-around;
   margin-top: 40px;
 }
+
 
  .card img {
   border-radius: 4px;
@@ -25,4 +13,78 @@
 
 .center-card-title {
   font-weight: normal;
+}
+
+.treatment-centre-card-product {
+  overflow: hidden;
+  height: 160px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.treatment-centre-card-product img {
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+}
+
+.treatment-centre-card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.treatment-centre-card-product-infos a {
+text-decoration: none;
+}
+
+.treatment-centre-card-product-infos {
+  margin: 0;
+}
+
+.treatment-centre-card-product-infos-text {
+margin: 8px;
+}
+
+.treatment-centre-card-product-infos-text p {
+font-size: 16px;
+font-weight: bolder;
+margin: 0;
+}
+
+.centre-card-details1 {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 160px;
+}
+
+.centre-card-details {
+  display: flex;
+  align-items: center;
+  width: 160px;
+  border-left: 0.05px solid lightgrey;
+  height: 100%;
+  bottom: 16px;
+
+}
+
+
+.centre-card-details p {
+  margin-left: 8px;
+  font-weight: bold;
+}
+
+.centre-card-price {
+float: right;
+}
+
+
+.fa-heart {
+  color: red;
 }
