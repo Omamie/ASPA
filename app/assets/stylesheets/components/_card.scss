@@ -8,8 +8,9 @@
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 8px;
+  margin: auto;
 }
 
 // Smallest device
@@ -50,7 +51,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,7 +132,7 @@ margin: 0;
 }
 
 
-.centre-card-details p, h3 {
+.centre-card-details p {
   font-size: 16px;
   margin-left: 8px;
   font-weight: lighter;
@@ -145,4 +146,8 @@ font-weight: lighter;
 
 .fa-heart {
   color: red;
+}
+
+.selected-treatment {
+  display: flex;
 }
