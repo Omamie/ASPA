@@ -3,11 +3,12 @@
 <div>
 <h1 class="mx-3 my-3"> Create a new Treatment </h1>
 <div>
-<%= simple_form_for @treatment do |f| %>
+<%= simple_form_for (value) do |f| %>
   <%= f.input :name %>
    <%= f.input :description %>
    <%= f.input :price %>
    <%= f.input :center_name %>
+   <%= f.input :address %>
   <%= f.submit "add a treatment", class: "btn btn-primary" %>
 </div>
 <% end %>

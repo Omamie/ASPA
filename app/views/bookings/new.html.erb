@@ -1,0 +1,10 @@
+<h1>Book your treatment</h1>
+
+
+<%= simple_form_for([@treatment, @booking]) do |f| %>
+
+<%= f.association :treatment, as: :select, collection: Treatment.all, include_blank: true %>
+<%= f.submit "book a treatment", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to 'Back to treatments', treatments_path %>

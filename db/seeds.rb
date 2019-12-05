@@ -28,10 +28,10 @@ Treatment.destroy_all
 
 puts 'Creating treatments...'
 treatment_attributes = [{"name":"felis","description":"Mattia sei un frande","price":781,"center_name":"at turpis", user_id: User.ids.sample},
-{"name":"eget","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.","price":965,"center_name":"convallis duis", user_id: User.ids.sample},
-{"name":"montes","description":"Duis bibendum.","price":856,"center_name":"hac", user_id: User.ids.sample},
-{"name":"ultrices","description":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.","price":10,"center_name":"orci pede", user_id: User.ids.sample},
-{"name":"convallis","description":"In hac habitasse platea dictumst. Etiam faucibus cursus urna.","price":93,"center_name":"est congue", user_id: User.ids.sample},
+{"name":"eget","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.","price":965,"center_name":"convallis duis", user_id: User.ids.sample, "address": "corso lodi, milan"},
+{"name":"montes","description":"Duis bibendum.","price":856,"center_name":"hac", user_id: User.ids.sample, "address": "mare street, london"},
+{"name":"ultrices","description":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.","price":10,"center_name":"orci pede", user_id: User.ids.sample, "address": "palermo"},
+{"name":"convallis","description":"In hac habitasse platea dictumst. Etiam faucibus cursus urna.","price":93,"center_name":"est congue", user_id: User.ids.sample, "address": "narobi"},
 {"name":"sem","description":"Vivamus vel nulla eget eros elementum pellentesque.","price":15,"center_name":"sollicitudin", user_id: User.ids.sample},
 {"name":"integer","description":"Donec posuere metus vitae ipsum. Aliquam non mauris.","price":407,"center_name":"bibendum felis", user_id: User.ids.sample},
 {"name":"semper","description":"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.","price":263,"center_name":"faucibus orci", user_id: User.ids.sample},
