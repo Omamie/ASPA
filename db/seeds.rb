@@ -27,16 +27,19 @@ User.create!(user_attributes)
 Treatment.destroy_all
 
 puts 'Creating treatments...'
-treatment_attributes = [{"name":"relax massage","description":"Mattia sei un frande","price":781,"center_name":"at turpis", user_id: User.ids.sample},
-{"name":"eget","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.","price":965,"center_name":"convallis duis", user_id: User.ids.sample, "address": "corso lodi, milan"},
-{"name":"montes","description":"Duis bibendum.","price":856,"center_name":"hac", user_id: User.ids.sample, "address": "mare street, london"},
-{"name":"ultrices","description":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.","price":10,"center_name":"orci pede", user_id: User.ids.sample, "address": "palermo"},
-{"name":"convallis","description":"In hac habitasse platea dictumst. Etiam faucibus cursus urna.","price":93,"center_name":"est congue", user_id: User.ids.sample, "address": "narobi"},
-{"name":"sem","description":"Vivamus vel nulla eget eros elementum pellentesque.","price":15,"center_name":"sollicitudin", user_id: User.ids.sample},
-{"name":"integer","description":"Donec posuere metus vitae ipsum. Aliquam non mauris.","price":407,"center_name":"bibendum felis", user_id: User.ids.sample},
-{"name":"semper","description":"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.","price":263,"center_name":"faucibus orci", user_id: User.ids.sample},
-{"name":"molestie","description":"Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.","price":453,"center_name":"iaculis congue", user_id: User.ids.sample},
-{"name":"ut","description":"Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.","price":188,"center_name":"ipsum",user_id: User.ids.sample}]
+
+treatment_attributes = [{name:"Crculatory massage",description:"Targeted massage to help blood circulation", price: 781, center_name:"Elvy Centro Benessere", user_id: User.ids.sample, address: "corso lodi, milan", remote_photo_url: "https://d19tiqumqauva7.cloudfront.net/var/andorra/storage/images/_aliases/linked_info1/www.andorra.ad/multimedia/galeria/relax/spa-s-i-centres-de-wellness/1177x492_spa-s-i-centres-de-wellness2/24045935-1-cat-ES/1177x492_spa-s-i-centres-de-wellness2.jpg"},
+{"name":"Relaxing massage","description":"Massage made with moves that relax muscles and mind.","price":965,"center_name": "Spazio SoloSalute", user_id: User.ids.sample, "address": "corso lodi, milan", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp49JSah0XHavPD-vdYjuk95uVNxRYQzr4YKxFP1heRGzNQKIE&s"},
+{"name":"Lymphatic drainage massage","description":"Massage that helps lymph flow towards the discharge points, frees the body from excess fluids.","price":856,"center_name":"The White Medispa", user_id: User.ids.sample, "address": "mare street, london", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShRyhJ2uNHzOfiLvZK2K5v_a3kbJxgx8I_t-loQXLkQJJyx1Ml&s"},
+{"name":"Tissue massage","description":"Manual anti cellulite indicated in cases of localized fat and cellulite treatment.","price":10,"center_name":"luk vilai thai massage", user_id: User.ids.sample, "address": "palermo",remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPtWZE3ZRJtnxqT2fEmVY8bO0VSphgr5YabPmfQSYlDsrTbbi&s"},
+{"name":"Sports massage","description":"With a sports massage to all the major muscles, tension is gradually relaxed and circulation restored.","price":93,"center_name":"Centro Olistico", user_id: User.ids.sample, "address": "narobi", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPtWZE3ZRJtnxqT2fEmVY8bO0VSphgr5YabPmfQSYlDsrTbbi&s"},
+{"name":"Relaxing massage with Argan oil","description":"Relaxing massage made with argan oil properties, super nutrients and antioxidants.","price":15,"center_name":"FiloDiLuna Atelier", user_id: User.ids.sample, "address": "via roma, milano", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp49JSah0XHavPD-vdYjuk95uVNxRYQzr4YKxFP1heRGzNQKIE&s"},
+{"name":"Zonal massage","description":"Massage performed in an area of the body: back, leg, foot, neck and neck area.","price":407,"center_name":"Meeting Club", user_id: User.ids.sample, "address": "via pisacane, pregnana milanese", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZx9IrV-fk4_66cqhmw0ZGWfWDJeBQp_3fQPIs1brOBqjsUnjj&s"},
+{"name":"Facial massage","description":"The treatment consists of a gentle massage of the face with the use of a vial or specific cream.","price":263,"center_name":"Oneonone Srl", user_id: User.ids.sample, "address": "corso lodi, milan", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7yYoo6xOR279SElLRARh-JJ2xkYqW04wHcNn4kbe5mk9AeHHWPw&s"},
+{"name":"Couples massage","description":"Massage performed simultaneously with relaxing effect.","price":453,"center_name":"Saint Tropez", user_id: User.ids.sample, "address": "viale molise, milan", remote_photo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJOwQTiQgng4GIz42pbnWhyxMg4igqThssaU-_Cw1sV2UMf0RE&s"},
+{"name":"Love Massage","description":"Candle. Couples massage using aromatic candles with ppepper and cocoa, which when lit, create an oil that caress the body. They represent a real wellness ritual that involves all the senses.","price":188,"center_name":"Centri Body Care",user_id: User.ids.sample, "address": "corso lodi, milan", "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJkadbzypiCB3z4ehujW9BHwZkAUoD3G5S5wxdUvTmkpyf7nCpZQ&s"}]
+
+
 
 Treatment.create!(treatment_attributes)
 

@@ -18,10 +18,20 @@
       <%= f.submit "add a review", class: "btn btn-primary" %>
       <% end %>
 </div>
-
+  
 <% @treatment.reviews.each do |r|  %>
   <%= r.content %>
 <%end%>
-
+                     
 </div>
+</div>
+
+<div>
+  <p>Your bookings:</p>
+  <% @my_booking.each do |booking| %>
+    <%= booking.date %>
+    <%= @treatment.name %>
+  <% end %>
+
+
 </div>
