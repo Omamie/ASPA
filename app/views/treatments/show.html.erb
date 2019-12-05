@@ -9,8 +9,8 @@
 
 <div class="container under-banner">
 
-  <div class="under-banner-titles">
-<div class="d-inline p-2 font-weight-bold" id="treatments">TREATMENTS</div>
+<div class="under-banner-titles">
+<div class="d-inline p-2" id="treatments">TREATMENTS</div>
 <div class="d-inline p-2 " id="staff">STAFF</div>
 <div class="d-inline p-2 " id="reviews">REVIEWS</div>
 <div class="d-inline p-2 " id="address">ADDRESS</div>
@@ -19,14 +19,45 @@
 
 </div>
 
-
+<div class="center-body-text">
 <div class="container center-body">
 
-<h3><strong>You have selected:</strong> <%= @treatment.name %></h3>
+<h3> <strong>TREATMENTS</strong> </h3>
+<h3>You have selected: </h3><p><%= @treatment.name %></p>
 <p>Description: <%= @treatment.description%></p>
-</div>
 
 <%= link_to "book now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
+
+</div>
+<div class="container">
+
+
+</div>
+</div>
+
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Thermal Spa
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Couple's Massage
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Swedish Massage
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Clay Mud Mask
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Spa Weekend
+  </div>
+</div>
+
 
 </div>
 
