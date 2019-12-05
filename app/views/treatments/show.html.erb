@@ -11,7 +11,18 @@
 
   <%= link_to "book now", new_treatment_booking_path(@treatment) %>
 
+
+  <%= simple_form_for [@treatment, @review] do |f| %>
+      <%= f.input :stars, collection: 1..10 %>
+      <%= f.input :content%>
+      <%= f.submit "add a review", class: "btn btn-primary" %>
+      <% end %>
 </div>
+  
+<% @treatment.reviews.each do |r|  %>
+  <%= r.content %>
+<%end%>
+                     
 </div>
 </div>
 
