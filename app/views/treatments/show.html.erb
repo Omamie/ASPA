@@ -34,24 +34,18 @@
 
 <div class="container center-body" id="staff">
 
-<h3>STAFF</h3>
+<h3>Staff</h3>
 
-<h3>You have selected: </h3><p><%= @treatment.name %></p>
-<%= link_to "book now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
-
-
-<p>Description: <%= @treatment.description%></p>
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
 
 </div>
 
 
 <div class="container center-body" id="staff">
 
-<h3>REVIEWS</h3>
-<h3>You have selected: </h3><p><%= @treatment.name %></p>
-<p>Description: <%= @treatment.description%></p>
-
-<%= link_to "book now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
+<h3>Reviews</h3>
 
 </div>
 
@@ -59,17 +53,14 @@
 
 <div class="container center-body" id="address">
 
-<h3>ADDRESS</h3>
-<h3>We are based in: </h3><p><%= @treatment.address.upcase%></p>
-<p>Description: <%= @treatment.description%></p>
-
-<%= link_to "book now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
+<h3>Address</h3>
+<h3>We are based in: </h3><p><%= @treatment.address.capitalize%></p>
 
 </div>
 
 
 <div class="container">
-<h3>Explore More</h3>
+<h3>Explore Further</h3>
 </div>
 
 <div class="container">
@@ -84,14 +75,6 @@
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?zen)">
     Swedish Massage
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?thai-massage)">
-    Clay Mud Mask
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?facial)">
-    Spa Weekend
   </div>
 </div>
 </div>
