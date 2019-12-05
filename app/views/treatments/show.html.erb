@@ -3,3 +3,15 @@
 
 <%= @treatment.name %>
 <%= @treatment.description %>
+<div class="container py-3 ">
+<div class="modal-card-smaller p-3">
+<div>
+<h1 class="mx-3 my-3"> Book a Treatment </h1>
+<div>
+
+  <%= link_to "book now", new_treatment_booking_path(@treatment) %>
+
+</div>
+
+</div>
+</div>

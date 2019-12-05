@@ -1,6 +1,15 @@
 class TreatmentsController < ApplicationController
   def index
     @treatments = policy_scope(Treatment)
+    @treatments = Treatment.geocoded
+
+    @markers = @treatments.map do |treatment|
+      {
+        lat: treatment.latitude,
+        lng: treatment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { treatment: treatment })
+      }
+    end
   end
 
   def show
@@ -21,6 +30,12 @@ class TreatmentsController < ApplicationController
     end
  end
 
+ def show
+  @treatment= Treatment.find(params[:id])
+  authorize @treatment
+   @booking = current_user.bookings.new
+ end
+
   def edit
     @treatment = current_user.treatments.new
     authorize @treatment
@@ -39,9 +54,13 @@ class TreatmentsController < ApplicationController
     redirect_to treatments_path
   end
 
+  def my_treatments
+    @treatments = current_user.treatments
+  end
+
   private
 
   def safe_params
-    params.require(:treatment).permit(:name, :description, :price, :center_name)
+    params.require(:treatment).permit(:name, :description, :price, :center_name, :address)
   end
 end
