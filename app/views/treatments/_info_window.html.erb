@@ -1,2 +1,3 @@
 <h2><%= treatment.center_name %></h2>
-<p><%= treatment.description %></p>
+<p><%= treatment.name %></p>
+<%= cl_image_tag("#{treatment.photo}", width: 200, height: 150, crop: :fill) %>
