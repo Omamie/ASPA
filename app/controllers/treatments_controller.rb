@@ -36,6 +36,15 @@ class TreatmentsController < ApplicationController
    @booking = current_user.bookings.new
  end
 
+ def search
+    if params[:query].present?
+      sql_query = "name ILIKE :treatment"
+      @treatments = Treatment.where(sql_query, treatment: "%#{params[:query]}%")
+   else
+      @treatments = Treatment.all
+   end
+  end
+
   def edit
     @treatment = current_user.treatments.new
     authorize @treatment

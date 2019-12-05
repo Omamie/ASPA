@@ -1,0 +1,9 @@
+<%= form_tag treatments_path, method: :get do %>
+  <%= text_field_tag :treatment,
+    params[:query],
+    class: "form-control",
+    placeholder: "Choose your treatment"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+

@@ -27,7 +27,7 @@ User.create!(user_attributes)
 Treatment.destroy_all
 
 puts 'Creating treatments...'
-treatment_attributes = [{"name":"felis","description":"Mattia sei un frande","price":781,"center_name":"at turpis", user_id: User.ids.sample},
+treatment_attributes = [{"name":"relax massage","description":"Mattia sei un frande","price":781,"center_name":"at turpis", user_id: User.ids.sample},
 {"name":"eget","description":"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.","price":965,"center_name":"convallis duis", user_id: User.ids.sample, "address": "corso lodi, milan"},
 {"name":"montes","description":"Duis bibendum.","price":856,"center_name":"hac", user_id: User.ids.sample, "address": "mare street, london"},
 {"name":"ultrices","description":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat.","price":10,"center_name":"orci pede", user_id: User.ids.sample, "address": "palermo"},
