@@ -12,12 +12,12 @@
       <p><%= t.address.capitalize %></p>
 
 
-      <% if policy(t).update? %>
-  <%= link_to 'Edit', edit_treatment_path(t) %>
-  <% end %>
-   <% if policy(t).destroy? %>
-  <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
-  <% end %>
+    <% if policy(t).update? %>
+    <%= link_to 'Edit', edit_treatment_path(t) %>
+    <% end %>
+    <% if policy(t).destroy? %>
+    <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
+    <% end %>
       </div>
       </div>
       </div>

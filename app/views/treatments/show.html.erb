@@ -10,7 +10,7 @@
 <div class="container under-banner">
 
 <div class="under-banner-titles">
-<div class="d-inline p-2" id="treatments">TREATMENTS</div>
+<div class="d-inline" id="treatments">TREATMENTS</div>
 <div class="d-inline p-2 " id="staff">STAFF</div>
 <div class="d-inline p-2 " id="reviews">REVIEWS</div>
 <div class="d-inline p-2 " id="address">ADDRESS</div>
@@ -20,19 +20,19 @@
 </div>
 
 <div class="center-body-text" id="treatments">
-<div class="container center-body">
+<div class="container border-bottom ">
 
 
 
 <h3>You have selected: </h3><p><%= @treatment.name.capitalize %></p>
-<div class="selected-treatment">
+<div class="d-inline">
 <p>Treatment Details: <br /> <%= @treatment.description%></p>
 <%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
 </div>
 </div>
+</div>
 
-
-<div class="container center-body" id="staff">
+<div class="container border-bottom card-gap" id="staff">
 
 <h3>Staff</h3>
 
@@ -43,37 +43,44 @@
 </div>
 
 
-<div class="container center-body" id="staff">
+<div class="container border-bottom mb-3 card-gap" id="staff">
 
 <h3>Reviews</h3>
 
-</div>
-
-
-
-<div class="container center-body" id="address">
-
-<h3>Address</h3>
-<h3>We are based in: </h3><p><%= @treatment.address.capitalize%></p>
+<%= link_to "Add A Review", class: "btn btn-ghost"%>
 
 </div>
 
 
-<div class="container">
-<h3>Explore Further</h3>
+
+<div class="container border-bottom card-gap py-3" id="address">
+
+<h class="updated-font card-gap">About:</h5>
+
+<div class= "about-text card-gap">
+
+<p><%= @treatment.address.capitalize%></p>
+</div>
+
+</div>
+
+
+
+<div class="container card-gap">
+<h5>Recommended For You</h5>
 </div>
 
 <div class="container">
 <div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?spa)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1534003888922-a3504fa8914e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
     Thermal Spa
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?massage)">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
     Couple's Massage
   </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?zen)">
+  <div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1545183387-50fea397256e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
     Swedish Massage
   </div>
 </div>
@@ -82,5 +89,7 @@
 </div>
 
 </div>
-</div>
 
+
+<div class="footer-copyright text-center py-2">© 2019 Copyright: <%= link_to"Aspa Group s.r.l.", root_path %></a>
+  </div>

@@ -28,9 +28,14 @@
 }
 
 .under-banner {
-padding-top: 24px;
-padding-bottom: 24px;
+padding-top: 16px;
+padding-bottom: 16px;
+margin-bottom: 16px;
 
+}
+
+.under-banner-titles p {
+font-weight: bold;
 }
 
 .center-body {
@@ -39,5 +44,6 @@ padding: 80px  0;
 
 
 .center-body-text {
-  border: 0.4px solid lightgrey;
+  border-top: 0.2px solid lightgrey;
+  margin-bottom: 8px
 }
