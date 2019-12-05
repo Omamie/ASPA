@@ -6,7 +6,7 @@ class TreatmentsController < ApplicationController
        sql_query = "name ILIKE :treatment and address ILIKE :address"
        @treatments = Treatment.where(sql_query, treatment: "%#{params[:treatment]}%" , address:"%#{params[:address]}%")
     else
-      @treatments = Treatment.geocoded
+      @treatments = Treatment.all
     end
 
     @markers = @treatments.map do |treatment|

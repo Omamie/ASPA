@@ -4,7 +4,9 @@
   <% @treatments.each do |t| %>
 
   <div class="treatment-centre-card-product">
-    <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
+    <%= cl_image_tag t.photo, height: 300, width: 400, crop: :fill %>
+
+
     <div class="centre-card-details1">
     <div class="treatment-centre-card-product-infos">
       <div class="treatment-centre-card-product-infos-text">

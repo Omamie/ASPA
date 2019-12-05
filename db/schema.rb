@@ -25,15 +25,6 @@ ActiveRecord::Schema.define(version: 2019_12_04_115938) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.bigint "treatment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["treatment_id"], name: "index_reviews_on_treatment_id"
-  end
-
   create_table "treatments", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
@@ -70,6 +61,5 @@ ActiveRecord::Schema.define(version: 2019_12_04_115938) do
 
   add_foreign_key "bookings", "treatments"
   add_foreign_key "bookings", "users"
-  add_foreign_key "reviews", "treatments"
   add_foreign_key "treatments", "users"
 end
