@@ -1,13 +1,21 @@
 class TreatmentsController < ApplicationController
   def index
     @treatments = policy_scope(Treatment)
-    @treatments = Treatment.geocoded
+
+    if params[:treatment].present? && [:address].present?
+       sql_query = "name ILIKE :treatment and address ILIKE :address"
+       @treatments = Treatment.where(sql_query, treatment: "%#{params[:treatment]}%" , address:"%#{params[:address]}%")
+    else
+      @treatments = Treatment.geocoded
+    end
 
     @markers = @treatments.map do |treatment|
       {
         lat: treatment.latitude,
         lng: treatment.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { treatment: treatment })
+        infoWindow: render_to_string(partial: "info_window", locals: { treatment: treatment }),
+        image_url: helpers.asset_url('circle-cropped.png')
+
       }
     end
   end
