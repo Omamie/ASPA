@@ -14,7 +14,7 @@ class TreatmentsController < ApplicationController
         lat: treatment.latitude,
         lng: treatment.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { treatment: treatment }),
-        image_url: helpers.asset_url('ASPA logo.png')
+        image_url: helpers.asset_url('circle-cropped.png')
 
       }
     end
