@@ -1,9 +1,15 @@
+<div class="search-form">
 <%= form_tag treatments_path, method: :get do %>
   <%= text_field_tag :treatment,
-    params[:query],
-    class: "form-control",
+    params[:treatment],
+    class: "form-control input-search-form",
     placeholder: "Choose your treatment"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= text_field_tag :address,
+    params[:address],
+    class: "form-control input-search-form",
+    placeholder: "Choose the city"
+  %>
+  <%= submit_tag "Search Now", class: "btn btn-primary search-button" %>
 <% end %>
-
+</div>
