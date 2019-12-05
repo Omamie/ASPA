@@ -1,12 +1,13 @@
 <h1 class="text-center bg-white">All Treatments</h1>
-<div class="container-all">
+<div class="d-flex p-2 bd-highlight">
   <div class="card-container">
   <% @treatments.each do |t| %>
 
-  <div class="card-treatment">
+  <div class="card-product">
     <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
-    <div id="card-text">
-      <h3> <%= link_to t.center_name, treatment_path(t.id) %></h3>
+    <i class="far fa-heart"></i>
+    <div id="card-product-infos">
+      <h2> <%= link_to t.center_name, treatment_path(t.id) %></h2>
       <p>  <%= t.name %> </p>
       <p>  <%= t.address %> </p>
        <% if policy(t).update? %>
