@@ -1,15 +1,53 @@
-<h1>Treatments#show</h1>
-<p>Find me in app/views/treatments/show.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/900×700/?spa);">
+  <div class="container">
+    <div class="center-page">
+  <h2><%= @treatment.center_name.capitalize %></h2>
+  <p><%= @treatment.address.capitalize %></p>
+  </div>
+  </div>
+</div>
 
-<%= @treatment.name %>
-<%= @treatment.description %>
-<div class="container py-3 ">
-<div class="modal-card-smaller p-3">
-<div>
-<h1 class="mx-3 my-3"> Book a Treatment </h1>
-<div>
+<div class="container under-banner">
 
-  <%= link_to "book now", new_treatment_booking_path(@treatment) %>
+<div class="under-banner-titles">
+<div class="d-inline" id="treatments">TREATMENTS</div>
+<div class="d-inline p-2 " id="staff">STAFF</div>
+<div class="d-inline p-2 " id="reviews">REVIEWS</div>
+<div class="d-inline p-2 " id="address">ADDRESS</div>
+</div>
+
+
+</div>
+
+<div class="center-body-text" id="treatments">
+<div class="container border-bottom ">
+
+
+
+<h3>You have selected: </h3><p><%= @treatment.name.capitalize %></p>
+<div class="d-inline">
+<p>Treatment Details: <br /> <%= @treatment.description%></p>
+<%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
+</div>
+</div>
+</div>
+
+<div class="container border-bottom card-gap" id="staff">
+
+<h3>Staff</h3>
+
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+
+</div>
+
+
+<div class="container border-bottom mb-3 card-gap" id="staff">
+
+<h3>Reviews</h3>
+
+<%= link_to "Add A Review", class: "btn btn-ghost"%>
 
 
   <%= simple_form_for [@treatment, @review] do |f| %>
@@ -19,9 +57,56 @@
       <% end %>
 </div>
 
+<div class="container border-bottom card-gap py-3" id="address">
+
+<h class="updated-font card-gap">About:</h5>
+
+<div class= "about-text card-gap">
+
+<p><%= @treatment.address.capitalize%></p>
+
 <% @treatment.reviews.each do |r|  %>
   <%= r.content %>
 <%end%>
 
 </div>
+
+</div>
+
+
+<div class="container card-gap">
+<h5>Recommended For You</h5>
+</div>
+
+<div class="container">
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1534003888922-a3504fa8914e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+    Thermal Spa
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+    Couple's Massage
+  </div>
+
+  <div class="card-category mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1545183387-50fea397256e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+    Swedish Massage
+  </div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div>
+  <p>Your bookings:</p>
+  <% @my_booking.each do |booking| %>
+    <%= booking.date %>
+    <%= @treatment.name %>
+  <% end %>
+
+<div class="footer-copyright text-center py-2">© 2019 Copyright: <%= link_to"Aspa Group s.r.l.", root_path %></a>
+  </div>
+
 </div>

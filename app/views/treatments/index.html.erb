@@ -4,27 +4,27 @@
   <% @treatments.each do |t| %>
 
   <div class="treatment-centre-card-product">
-    <img src="https://source.unsplash.com/1600x900/?spa" alt="" height="200px">
+    <%= cl_image_tag t.photo, height: 300, width: 400, crop: :fill %>
     <div class="centre-card-details1">
     <div class="treatment-centre-card-product-infos">
       <div class="treatment-centre-card-product-infos-text">
-      <h3><%= t.name.upcase %></h3>
+      <p><%= link_to t.center_name.upcase, treatment_path(t.id)%></p>
       <p><%= t.address.capitalize %></p>
 
 
-      <% if policy(t).update? %>
-  <%= link_to 'Edit', edit_treatment_path(t) %>
-  <% end %>
-   <% if policy(t).destroy? %>
-  <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
-  <% end %>
+    <% if policy(t).update? %>
+    <%= link_to 'Edit', edit_treatment_path(t) %>
+    <% end %>
+    <% if policy(t).destroy? %>
+    <%= link_to '', t, method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
+    <% end %>
       </div>
       </div>
       </div>
       <div class="centre-card-details">
         <div class="centre-card-price">
-      <p><%= link_to t.center_name, treatment_path(t.id)%></p>
-      <p>From: <%= t.price %></p>
+      <h3><%= t.name.capitalize %></h3>
+      <p>Prices from: <%= t.price %>€</p>
       </div>
       </div>
   </div>
