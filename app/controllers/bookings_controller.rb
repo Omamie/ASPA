@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     authorize @treatment
     authorize @booking
     if @booking.save
-      redirect_to treatment_path(@treatment)
+      redirect_to pages_user_profile_path
     else
       render "new"
     end

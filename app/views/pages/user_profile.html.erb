@@ -1,0 +1,33 @@
+
+<div class="banner-search" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dbgxzafez/image/upload/v1575303401/spa-dolomiti-wellness-hotel-italy-indoor-activity-pool-swimming-waves-massage_ycvlmi.jpg);">
+  <div class="container-search margin-left">
+    <h1>Welcome<strong> on </strong> your  <strong>profile</strong>!</h1>
+    <p>Check your order and write your review...</p>
+    <%#= link_to "Search Now", treatments_path, class:"btn btn-flat"%>
+  </div>
+</div>
+
+
+
+<h2 class="card-title margin-left">Your booking list.</h3>
+<div class="d-flex p-2 bd-highlight">
+    <div class="row">
+  <% @my_bookings.each do |b| %>
+  <div class="card-container">
+  <div class="treatment-centre-card-product">
+    <%= cl_image_tag b.treatment.photo, height: 300, width: 400, crop: :fill %>
+    <div class="centre-card-details1">
+    <div class="treatment-centre-card-product-infos">
+      <div class="treatment-centre-card-product-infos-text">
+      <p><%= link_to b.treatment.center_name.upcase, treatment_path(b.treatment)%></p>
+      <p><%= b.treatment.address.capitalize %></p>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<% end %>
+</div>
+</div>
+
+

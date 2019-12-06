@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'reviews/create'
   get 'reviews/new'
+  get 'pages/user_profile'
   resources :treatments do
     resources :reviews, only: [:create, :new, :index]
     resources :bookings, only: [:create, :new, :show]
