@@ -38,6 +38,8 @@ class TreatmentsController < ApplicationController
     authorize @treatment
     @booking = current_user.bookings.new
     @my_booking = Booking.where(user: current_user, treatment: @treatment)
+    @review = Review.new
+
   end
 
   def edit

@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2019_12_05_164022) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "stars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "treatment_id"
+    t.index ["treatment_id"], name: "index_reviews_on_treatment_id"
+  end
+
   create_table "treatments", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
