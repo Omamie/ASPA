@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<% @treatment.photo_url %>');">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@treatment.photo)%>);">
   <div class="container">
     <div class="center-page">
   <h2><%= @treatment.center_name.capitalize %></h2>
@@ -10,10 +10,10 @@
 <div class="container under-banner">
 
 <div class="under-banner-titles">
-<div class="d-inline" id="treatments">TREATMENTS</div>
-<div class="d-inline p-2 " id="staff">STAFF</div>
-<div class="d-inline p-2 " id="reviews">REVIEWS</div>
-<div class="d-inline p-2 " id="address">ADDRESS</div>
+<div class="d-inline" id="treatments"><a href="#treatments">TREATMENTS</a></div>
+<div class="d-inline p-2 " id="staff"><a href="staff">STAFF</a></div>
+<div class="d-inline p-2 " id="reviews"><a href="reviews">REVIEWS</a></div>
+<div class="d-inline p-2 " id="address"><a href="address">ADDRESS</a></div>
 </div>
 
 
