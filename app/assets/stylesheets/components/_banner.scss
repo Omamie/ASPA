@@ -29,13 +29,12 @@
 
 .under-banner {
 padding-top: 16px;
-padding-bottom: 16px;
 margin-bottom: 16px;
 
 }
 
 .under-banner-titles p {
-font-weight: bold;
+font-weight: bolder;
 }
 
 .center-body {
@@ -47,3 +46,9 @@ padding: 80px  0;
   border-top: 0.2px solid lightgrey;
   margin-bottom: 8px
 }
+
+
+.center-body-text  h4 {
+  padding-top: 32px;
+  }
+
