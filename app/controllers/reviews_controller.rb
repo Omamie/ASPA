@@ -15,6 +15,6 @@ class ReviewsController < ApplicationController
   end
 
   def safe_review
-    params.require(:review).permit(:content, :star)
+    params.require(:review).permit(:content, :stars)
   end
 end

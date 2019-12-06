@@ -22,3 +22,24 @@
   margin: auto;
 }
 
+
+.modal-card-smallest {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  width: 240px;
+  height: 320px;
+  margin: auto;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.modal-card-smallest img {
+  margin-top: 16px;
+}
+
+
+.staff {
+  list-style: none;
+}
