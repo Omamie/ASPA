@@ -1,10 +1,10 @@
-<h1>Book your treatment</h1>
-
-
-<%= simple_form_for([@treatment, @booking]) do |f| %>
-
-<%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-<%= f.submit "book a treatment", class: "btn btn-primary" %>
-<% end %>
-
-<%= link_to 'Back to treatments', treatments_path %>
+<div class="container py-3">
+  <div class="modal-card-smaller p-3"
+    ><h1>Book your treatment</h1>
+    <%= simple_form_for([@treatment, @booking]) do |f| %>
+    <%= f.input :date, as: :string, input_html: {class: "datepicker"} %>
+    <%= f.submit "Book Now", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to 'Back to treatments', treatments_path %>
+  </div>
+</div>
