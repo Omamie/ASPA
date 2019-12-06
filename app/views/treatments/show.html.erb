@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/900×700/?spa);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@treatment.photo)%>);">
   <div class="container">
     <div class="center-page">
   <h2><%= @treatment.center_name.capitalize %></h2>
@@ -10,10 +10,10 @@
 <div class="container under-banner">
 
 <div class="under-banner-titles">
-<div class="d-inline" id="treatments">TREATMENTS</div>
-<div class="d-inline p-2 " id="staff">STAFF</div>
-<div class="d-inline p-2 " id="reviews">REVIEWS</div>
-<div class="d-inline p-2 " id="address">ADDRESS</div>
+<div class="d-inline" id="treatments"><a href="#treatments">TREATMENTS</a></div>
+<div class="d-inline p-2 " id="staff"><a href="staff">STAFF</a></div>
+<div class="d-inline p-2 " id="reviews"><a href="reviews">REVIEWS</a></div>
+<div class="d-inline p-2 " id="address"><a href="address">ADDRESS</a></div>
 </div>
 
 
@@ -23,51 +23,74 @@
 <div class="container border-bottom ">
 
 
+<h4>You have selected: </h4><p><%= @treatment.name.capitalize %></p>
 
-<h3>You have selected: </h3><p><%= @treatment.name.capitalize %></p>
+<div class="d-flex bd-highlight">
+  <div class="py-2 w-100 bd-highlight"><p>Details: <br /> <%= @treatment.description%></p></div>
+  <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-ghost px-3" %></div>
+</div>
+
+<div class="under-banner-titles">
 <div class="d-inline">
-<p>Treatment Details: <br /> <%= @treatment.description%></p>
-<%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-ghost" %>
+
+</div>
+
 </div>
 </div>
 </div>
 
-<div class="container border-bottom card-gap" id="staff">
+<div class="container center-body border-bottom card-gap" id="staff">
 
+<div class="container">
 <h3>Staff</h3>
-
-<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-<img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-
+</div>
+<div class="container d-inline-flex">
+<div class="modal-card-smallest" style="width: 18rem;">
+  <img src="https://images.squarespace-cdn.com/content/v1/572509b97da24f738c3efd5c/1560787660378-PKV41FJOOHN3RVNOFH3A/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwkCFOLgzJj4yIx-vIIEbyWWRd0QUGL6lY_wBICnBy59Ye9GKQq6_hlXZJyaybXpCc/A_500px.png" class="avatar-large" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Maria Gambetti</h5>
+    <p class="card-text">Maria is a hardworking individual who provides the best services for all clients with her experience.</p>
+  </div>
 </div>
 
 
-<div class="container border-bottom mb-3 card-gap" id="staff">
+<div class="modal-card-smallest" style="width: 18rem;">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj7Xq-y8ktj-6cCzzIzF5tZZNfkk4XyDrCMYUbHgPrqDs3kHL0&s" class="avatar-large" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Marco Rossi</h5>
+    <p class="card-text">Marco has over 10 years professional experience as a private massage therapist. He travels regularly to provide top-tier services for vast roster of high-profile international clients.</p>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div class="container border-bottom mb-3 card-gap staff" id="staff">
 
 <h3>Reviews</h3>
 
-<%= link_to "Add A Review", class: "btn btn-ghost"%>
-
+<% @treatment.reviews.each do |r|  %>
+  <ul>
+<li><%= r.content %></li>
+  </ul>
+<%end%>
 
   <%= simple_form_for [@treatment, @review] do |f| %>
-      <%= f.input :stars, collection: (1..5).to_a, label: "Rate your experience" %>
+      <%= f.input :stars, collection: (1..5).to_a, label: "Leave A Review" %>
       <%= f.input :content%>
-      <%= f.submit "add a review", class: "btn btn-primary" %>
+      <%= f.submit "Submit A Review", class: "btn btn-ghost mb-3" %>
       <% end %>
 </div>
 
 <div class="container border-bottom card-gap py-3" id="address">
 
-<h class="updated-font card-gap">About:</h5>
+<h3 class="updated-font card-gap">About</h3>
 
 <div class= "about-text card-gap">
 
-<p><%= @treatment.address.capitalize%></p>
+  <p>We are based in <strong><%= @treatment.address.capitalize%></strong>, located in the heart of the city.</p>
+  <p>We are accessible by metro, tram, bus and taxi.</p>
 
-<% @treatment.reviews.each do |r|  %>
-  <%= r.content %>
-<%end%>
 
 </div>
 
@@ -98,6 +121,12 @@
 
 </div>
 
+<!-- <div>
+  <p>Your bookings:</p>
+  <% @my_booking.each do |booking| %>
+    <%= booking.date %>
+    <%= @treatment.name %>
+  <% end %> -->
 
 <div class="footer-copyright text-center py-2">© 2019 Copyright: <%= link_to"Aspa Group s.r.l.", root_path %></a>
 
