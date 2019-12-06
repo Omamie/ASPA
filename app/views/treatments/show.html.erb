@@ -3,6 +3,7 @@
     <div class="center-page">
   <h2><%= @treatment.center_name.capitalize %></h2>
   <p><%= @treatment.address.capitalize %></p>
+   <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-flat px-3" %></div>
   </div>
   </div>
 </div>
@@ -11,9 +12,9 @@
 
 <div class="under-banner-titles">
 <div class="d-inline" id="treatments"><a href="#treatments">TREATMENTS</a></div>
-<div class="d-inline p-2 " id="staff"><a href="staff">STAFF</a></div>
-<div class="d-inline p-2 " id="reviews"><a href="reviews">REVIEWS</a></div>
-<div class="d-inline p-2 " id="address"><a href="address">ADDRESS</a></div>
+<div class="d-inline p-2 " id="staff"><a href="#staff">STAFF</a></div>
+<div class="d-inline p-2 " id="reviews"><a href="#reviews">REVIEWS</a></div>
+<div class="d-inline p-2 " id="address"><a href="#address">ADDRESS</a></div>
 </div>
 
 
@@ -27,7 +28,6 @@
 
 <div class="d-flex bd-highlight">
   <div class="py-2 w-100 bd-highlight"><p>Details: <br /> <%= @treatment.description%></p></div>
-  <div class="p-2 flex-shrink-1 bd-highlight"><%= link_to "Book Now", new_treatment_booking_path(@treatment), class: "btn btn-ghost px-3" %></div>
 </div>
 
 <div class="under-banner-titles">
@@ -65,20 +65,33 @@
 </div>
 
 
-<div class="container border-bottom mb-3 card-gap staff" id="staff">
+<div class="container border-bottom mb-3 card-gap" id="reviews">
 
 <h3>Reviews</h3>
 
 <% @treatment.reviews.each do |r|  %>
   <ul>
 <li><%= r.content %></li>
+
+<% if r.stars == 1  %>
+<i class="fas fa-star"></i>
+ <% elsif  r.stars == 2 %>
+ <i class="fas fa-star"></i><i class="fas fa-star"></i>
+  <% elsif  r.stars == 3%>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+  <% elsif  r.stars == 4%>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+  <% elsif  r.stars == 5%>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+<% end %>
   </ul>
+
 <%end%>
 
   <%= simple_form_for [@treatment, @review] do |f| %>
       <%= f.input :stars, collection: (1..5).to_a, label: "Leave A Review" %>
       <%= f.input :content%>
-      <%= f.submit "Submit A Review", class: "btn btn-ghost mb-3" %>
+      <%= f.submit "Submit A Review", class: "btn btn-flat mb-3" %>
       <% end %>
 </div>
 

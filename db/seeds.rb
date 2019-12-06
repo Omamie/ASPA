@@ -43,16 +43,17 @@ treatment_attributes = [{name:"Circulatory massage",description:"Targeted massag
 Treatment.create!(treatment_attributes)
 
 puts 'Creating bookings'
+Booking.destroy_all
 
-booking_attributes = [{user_id: User.ids.sample,treatment_id:Treatment.ids.sample, date:"5/9/2019"},
-{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"6/13/2019"},
+booking_attributes = [{user_id: User.ids.sample,treatment_id:Treatment.ids.sample, date:"25/9/2019"},
+{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"13/6/2019"},
 {user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"5/7/2019"},
 {user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"6/11/2019"},
 {user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"4/9/2019"},
 {user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"10/3/2019"},
-{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"1/31/2019"},
-{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"2/19/2019"},
-{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"1/22/2019"},
+{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"1/3/2019"},
+{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"2/9/2019"},
+{user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"1/2/2019"},
 {user_id: User.ids.sample,treatment_id:Treatment.ids.sample,date:"12/1/2019"}]
 
 Booking.create!(booking_attributes)
