@@ -7,10 +7,8 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
-    authorize @booking
-
-
+    @bookings = current_user.bookings
+    authorize @bookings
   end
 
   def create

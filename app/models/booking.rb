@@ -1,9 +1,15 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :treatment
-  # after_action :overlaps?
+  validate :validate_other_booking_overlap
 
-  # def overlaps?
-  #   current_user.booking.date == @booking.date
-  # end
+  private
+
+  def validate_other_booking_overlap
+    other_bookings = Booking.where(treatment: self.treatment)
+    is_overlapping = other_bookings.any? do |other_booking|
+      self.date == other_booking.date
+    end
+    errors.add(:date, ("booking overlaps")) if is_overlapping
+  end
 end
