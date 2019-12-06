@@ -6,6 +6,11 @@ class BookingsController < ApplicationController
     authorize @treatment
   end
 
+  def show
+    @bookings = current_user.bookings
+    authorize @bookings
+  end
+
   def create
     @booking = current_user.bookings.new(booking_params)
     @treatment = Treatment.find(params[:treatment_id])
