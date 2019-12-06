@@ -6,6 +6,11 @@ class BookingsController < ApplicationController
     authorize @treatment
   end
 
+  def show
+    @bookings = current_user.bookings
+    authorize @bookings
+  end
+
   def create
     @booking = current_user.bookings.new(booking_params)
     @treatment = Treatment.find(params[:treatment_id])
@@ -13,7 +18,7 @@ class BookingsController < ApplicationController
     authorize @treatment
     authorize @booking
     if @booking.save
-      redirect_to treatment_path(@treatment)
+      redirect_to treatment_booking_path(@treatment, @booking)
     else
       render "new"
     end
