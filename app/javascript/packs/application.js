@@ -4,5 +4,6 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 
 import { initMapbox } from '../plugins/init_mapbox';
+import "../plugins/flatpickr"
 
 initMapbox();
